@@ -1,0 +1,129 @@
+---
+title: "Practical2_UNIX"
+author: "Katherine Tansey"
+date: "8/8/2017"
+output:
+  html_document:
+    depth: 6
+    keep_md: yes
+    theme: lumen
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+# Learning Objectives
+
+Understand UNIX command syntax       
+Learn basic UNIX commands              
+
+# Last Time
+/ on its own is the root directory of the whole file system        
+A relative path specifies a location starting from the current location          
+A full (absolute) path specifies a location from the root of the file system          
+.. means ‘the directory above the current one’        
+Up-arrow to scroll up through previous commands to edit and repeat them      
+
+**There is no trash bin: once something is deleted, it is gone**    
+
+# Command line syntax
+![](pictures/syntax.png)    
+
+
+* **Command** name tells the computer the operation/program/job to perform.
+    * ALWAYS a single word
+* A command can take **options**
+    * Although not always, they are optional 
+    * Usually preceded by a dash
+    * Change the behaviour of the command: usually the style in which the output is given.
+* **Arguments** gives the computer the required input
+    * Usually file or directory names
+    * Not always required
+    
+### Practical
+Move to your Documents folder on your computer. This will be slightly different for everyone depending on which operating system you are using. Use cd and pwd to move and check where you are, and use ls to see what each directory contains.       
+
+# ls
+List directory contents.
+
+Useful options:
+
+* -a  $\rightarrow$ all
+* -l  $\rightarrow$ long format
+* -t  $\rightarrow$ sort by time modification
+* -h  $\rightarrow$ print files sizes in human readable format
+* -F  $\rightarrow$ add a trailing / to directories
+
+### Practical
+
+Type:
+```
+ls
+```
+
+Type:
+```
+ls -l
+```
+> What do you think the option -l is doing?       
+> What has changed about the output from ls?                 
+
+Type:
+```
+ls -l -t
+```
+> Where would you go to find out what -t is doing?        
+> What has changed about the output from ls?               
+
+Type:
+```
+ls -lt
+```
+> Is this any different to the above?              
+> What file permission does our newly created file permissions_test.txt have?           
+> If you were unsure, where could you go for help? 
+
+
+# Command recall and Command line completion
+Unix/Linux permits access to previously typed commands using the cursor (arrow) keys.  
+
+* Up arrow $\Rightarrow$ previous command
+* Down arrow $\Rightarrow$ next
+* Left arrow $\Rightarrow$ left to edit
+* Right arrow $\Rightarrow$ right to edit
+* Ctrl-A $\Rightarrow$ move to the start of a line
+* Ctrl-E $\Rightarrow$ move to the end of a line  
+
+Unix does not respond to the move for movement in a line.
+
+## USE TAB!
+Use the *tab* key to auto complete file and directory names.     
+
+Tab is particularly useful to avoid typing long and complex directories and filenames.      
+
+If you want to ‘cd’ to a particular directory, you can type ‘cd ~/D’, press tab, and the command interpreter will attempt to complete the directory name. 
+
+If there is only one directory beginning with a ‘D’ then it will fill in the full name. 
+
+If there are more than one then the interpreter will complete as much of the name as possible. 
+
+Using this method, pressing tab and only typing multiple possible filenames occur, it’s a lot quicker to type filenames and reduces the possibility of spelling mistakes. 
+
+### Practical
+
+Use the up arrow to get the previous command where you just did a long list not sorted by time        
+ 
+Use the up arrow to get the previous command -- alter it to include the *a* option          
+> What does this do to the output?    
+
+Type:
+```
+history
+```
+> What is this telling you?     
+
+# Making a new directory
+
